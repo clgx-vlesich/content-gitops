@@ -1,6 +1,7 @@
 name: Python application
 
 on:
+  workflow_dispatch:
   push:
     paths:
     - 'python/*'
@@ -24,5 +25,5 @@ jobs:
       run: |
         cd ./python
         echo "${{ secrets.DOCKERPW }}" | docker login -u "${{ secrets.DOCKERUSR }}" --password-stdin
-        docker image build -t ${{ secrets.DOCKERUSR }}/gitops:hellov1.0 .
-        docker push ${{ secrets.DOCKERUSR }}/gitops:hellov1.0
+        docker image build -t ${{ secrets.DOCKERUSR }}/gitops:1.0 .
+        docker push ${{ secrets.DOCKERUSR }}/gitops:1.0
