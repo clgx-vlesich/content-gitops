@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment-qa
-  namespace: lasample-qa
+  namespace: lasample
   labels:
     app: nginx-qa
 spec:
